@@ -1,3 +1,4 @@
+alert("3");
 const loadPlaces = function (coords) {
     // COMMENT FOLLOWING LINE IF YOU WANT TO USE STATIC DATA AND ADD COORDINATES IN THE FOLLOWING 'PLACES' ARRAY
     const method = 'api';
@@ -84,7 +85,7 @@ window.onload = () => {
 			 // add place name
                     const text = document.createElement('a-link');
                     text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    text.setAttribute('title', place.name);
+                    text.setAttribute('title', "Himanshu");
                     text.setAttribute('href', 'http://www.shl.com/');
                     text.setAttribute('scale', '20 20 20');
 
