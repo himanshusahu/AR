@@ -87,7 +87,7 @@ window.onload = () => {
                     text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     text.setAttribute('title', "Himanshu");
                     text.setAttribute('href', 'http://www.shl.com/');
-                    text.setAttribute('scale', '20 20 20');
+                    text.setAttribute('scale', '1 1 1');
 
                     text.addEventListener('loaded', () => {
                         window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
