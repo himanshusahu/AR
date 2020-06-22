@@ -1,3 +1,4 @@
+alert(1)
 const loadPlaces = function (coords) {
     // COMMENT FOLLOWING LINE IF YOU WANT TO USE STATIC DATA AND ADD COORDINATES IN THE FOLLOWING 'PLACES' ARRAY
     const method = 'api';
@@ -53,6 +54,7 @@ function loadPlaceFromAPIs(position) {
 
 
 window.onload = () => {
+    alert(2)
     const scene = document.querySelector('a-scene');
 
     // first get current user location
