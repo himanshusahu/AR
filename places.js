@@ -60,7 +60,7 @@ window.onload = () => {
     return navigator.geolocation.getCurrentPosition(function (position) {
 
         // than use it to load from remote APIs some places nearby
-      /*  loadPlaces(position.coords)
+       loadPlaces(position.coords)
             .then((places) => {
                 places.forEach((place) => {
                     const latitude = place.location.lat;
@@ -79,8 +79,8 @@ window.onload = () => {
 
                     scene.appendChild(text);
                 });
-            }) */
-			const latitude = position.coords.latitude;
+            }) 
+		/*	const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 			 // add place name
                     const text = document.createElement('a-link');
@@ -93,7 +93,7 @@ window.onload = () => {
                         window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
                     });
 
-                    scene.appendChild(text);
+                    scene.appendChild(text); */
 			
     },
         (err) => console.error('Error in retrieving position', err),
