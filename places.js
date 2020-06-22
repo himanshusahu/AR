@@ -1,4 +1,3 @@
-alert(1)
 const loadPlaces = function (coords) {
     // COMMENT FOLLOWING LINE IF YOU WANT TO USE STATIC DATA AND ADD COORDINATES IN THE FOLLOWING 'PLACES' ARRAY
     const method = 'api';
@@ -54,14 +53,13 @@ function loadPlaceFromAPIs(position) {
 
 
 window.onload = () => {
-    alert(2)
     const scene = document.querySelector('a-scene');
 
     // first get current user location
     return navigator.geolocation.getCurrentPosition(function (position) {
 
         // than use it to load from remote APIs some places nearby
-        loadPlaces(position.coords)
+      /*  loadPlaces(position.coords)
             .then((places) => {
                 places.forEach((place) => {
                     const latitude = place.location.lat;
@@ -71,7 +69,7 @@ window.onload = () => {
                     const text = document.createElement('a-link');
                     text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     text.setAttribute('title', place.name);
-                    text.setAttribute('href', 'http://www.example.com/');
+                    text.setAttribute('href', 'http://www.shl.com/');
                     text.setAttribute('scale', '20 20 20');
 
                     text.addEventListener('loaded', () => {
@@ -80,7 +78,22 @@ window.onload = () => {
 
                     scene.appendChild(text);
                 });
-            })
+            }) */
+			const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+			 // add place name
+                    const text = document.createElement('a-link');
+                    text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+                    text.setAttribute('title', place.name);
+                    text.setAttribute('href', 'http://www.shl.com/');
+                    text.setAttribute('scale', '20 20 20');
+
+                    text.addEventListener('loaded', () => {
+                        window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+                    });
+
+                    scene.appendChild(text);
+			
     },
         (err) => console.error('Error in retrieving position', err),
         {
