@@ -1,1 +1,71 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src='https://statics.teams.cdn.office.net/sdk/v1.6.0/js/MicrosoftTeams.min.js'></script>
+</head>
+    <body>
+        <!--<button id="btn1">Select Gray</button>
+        <img id="icon" src="/images/teamsIcon.png" alt="icon" style="width:100px" />
+        <button id="btn2" onclick="colorClickRed()">Select Red</button> -->
+
+        <script>
+            microsoftTeams.initialize();
+            microsoftTeams.settings.setValidityState(true);
+            microsoftTeams.settings.setSettings({
+                        websiteUrl: "https://talentcentral-1a.eu.shl.zone",
+                        contentUrl: "http://portal-test.shl.limited:8080/guacamole/#/",
+                        entityId: "grayIconTab",
+                        suggestedDisplayName: "SHL CodeSim"
+                    });
+            saveEvent.notifySuccess();
+            let saveGray = () => {
+                microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
+                    microsoftTeams.settings.setSettings({
+                        websiteUrl: "https://talentcentral-1a.eu.shl.zone",
+                        contentUrl: "http://portal-test.shl.limited:8080/guacamole/#/",
+                        entityId: "grayIconTab",
+                        suggestedDisplayName: "SHL Portal"
+                    });
+                    saveEvent.notifySuccess();
+                });
+            }
+            let saveRed = () => {
+                microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
+                    microsoftTeams.settings.setSettings({
+                        websiteUrl: "https://talentcentral-1a.eu.shl.zone",
+                        contentUrl: "http://portal-test.shl.limited:8080/guacamole/#/",
+                        entityId: "redIconTab",
+                        suggestedDisplayName: "Portal"
+                    });
+                    saveEvent.notifySuccess();
+                });
+            }
+
+           // let gr = document.getElementById("gray").style;
+            //let rd = document.getElementById("red").style;
+			
+			document.getElementById('btn1').onclick = function(){
+			document.getElementById('btn2').style.display = "none";
+			//gr.display = "block";
+              //  rd.display = "none";
+                microsoftTeams.settings.setValidityState(true);
+                saveGray()
+				}
+
+            const colorClickGray = () => {
+			//alert(1)
+              //  gr.display = "block";
+                //rd.display = "none";
+                microsoftTeams.settings.setValidityState(true);
+                saveGray()
+            }
+
+            const colorClickRed = () => {
+                rd.display = "block";
+                gr.display = "none";
+                microsoftTeams.settings.setValidityState(true);
+                saveRed();
+            }
+        </script>
+    </body>
+</html>
