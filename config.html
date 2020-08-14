@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +11,11 @@
 
         <script>
             microsoftTeams.initialize();
-          /*  microsoftTeams.settings.setValidityState(true);
-            microsoftTeams.settings.setSettings({
-                        websiteUrl: "https://talentcentral-1a.eu.shl.zone",
-                        contentUrl: "https://talentcentral-1a.eu.shl.zone/admin/login",
-                        entityId: "grayIconTab",
-                        suggestedDisplayName: "SHL CodeSim"
-                    });
-            saveEvent.notifySuccess(); */
             let saveGray = () => {
                 microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
                     microsoftTeams.settings.setSettings({
                         websiteUrl: "https://talentcentral-1a.eu.shl.zone",
-                        contentUrl: "https://talentcentral-1a.eu.shl.zone/admin/login",
+                        contentUrl: "https://talentcentral-1a.eu.shl.zone/portal",
                         entityId: "grayIconTab",
                         suggestedDisplayName: "SHL Portal"
                     });
@@ -33,7 +26,7 @@
                 microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
                     microsoftTeams.settings.setSettings({
                         websiteUrl: "https://talentcentral-1a.eu.shl.zone",
-                        contentUrl: "https://talentcentral-1a.eu.shl.zone/admin/login",
+                        contentUrl: "https://talentcentral-1a.eu.shl.zone/portal",
                         entityId: "redIconTab",
                         suggestedDisplayName: "Portal"
                     });
@@ -69,3 +62,4 @@
         </script>
     </body>
 </html>
+
